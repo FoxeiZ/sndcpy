@@ -13,9 +13,9 @@ The purpose is to enable [audio forwarding][issue14] while mirroring with
 ## Requirements
 
  - The Android device requires at least Android 10.
- - [VLC] must be installed on the computer.
+ - [ffplay] must be in PATH.
 
-[vlc]: https://www.videolan.org/
+[ffplay]: https://ffmpeg.org/download.html
 
 
 ## Get the app
@@ -62,14 +62,6 @@ Once you clicked on _START NOW_, press _Enter_ in the console to start playing
 on the computer. Press `Ctrl`+`c` in the terminal to stop (except on Windows,
 just disconnect the device or stop capture from the device notifications).
 
-VLC may print this error message once:
-
-```
-main stream error: connection error: Connection refused
-```
-
-It is "expected", just ignore it.
-
 The sound continues to be played on the device. The volume can be adjusted
 independently on the device and on the computer.
 
@@ -103,14 +95,7 @@ So some apps might need to be updated to support audio capture.
 
 This is just a proof-of-concept, so it's far from perfect.
 
-For example, jitter may cause VLC to automatically increase its buffering,
-causing an unacceptable delay:
-
-```
-main input error: ES_OUT_SET_(GROUP_)PCR  is called too late (pts_delay increased to 377 ms)
-```
-
-In that case, just restart it.
+About latency, should be somewhere around ~90ms
 
 ## Environment variables
 
