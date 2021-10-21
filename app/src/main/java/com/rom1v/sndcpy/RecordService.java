@@ -41,7 +41,7 @@ public class RecordService extends Service {
 
 
     private static final int SAMPLE_RATE = 48000;
-    private static final int CHANNELS = 2;
+    private static final int CHANNELS = 1;
 
     private final Handler handler = new ConnectionHandler(this);
     private MediaProjectionManager mediaProjectionManager;
@@ -135,6 +135,7 @@ public class RecordService extends Service {
         AudioPlaybackCaptureConfiguration.Builder confBuilder = new AudioPlaybackCaptureConfiguration.Builder(mediaProjection);
         confBuilder.addMatchingUsage(AudioAttributes.USAGE_MEDIA);
         confBuilder.addMatchingUsage(AudioAttributes.USAGE_GAME);
+        confBuilder.addMatchingUsage(AudioAttributes.USAGE_VOICE_COMMUNICATION);
         confBuilder.addMatchingUsage(AudioAttributes.USAGE_UNKNOWN);
         return confBuilder.build();
     }
@@ -165,7 +166,7 @@ public class RecordService extends Service {
                     handler.sendEmptyMessage(MSG_CONNECTION_ESTABLISHED);
 
                     recorder.startRecording();
-                    int BUFFER_MS = 15; // do not buffer more than BUFFER_MS milliseconds
+                    int BUFFER_MS = 10; // do not buffer more than BUFFER_MS milliseconds
                     byte[] buf = new byte[SAMPLE_RATE * CHANNELS * BUFFER_MS / 1000];
                     while (true) {
                         int r = recorder.read(buf, 0, buf.length);
