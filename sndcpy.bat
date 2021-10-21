@@ -1,5 +1,6 @@
 @echo off
 if not defined ADB set ADB=adb
+if not defined FFPLAY set FFPLAY=ffplay
 if not defined SNDCPY_APK set SNDCPY_APK=sndcpy.apk
 if not defined SNDCPY_PORT set SNDCPY_PORT=28200
 
@@ -21,7 +22,7 @@ if not "%1"=="" (
 echo Press Enter once audio capture is authorized on the device to start playing...
 pause >nul
 echo Playing audio...
-ffplay -f s16le -ar 48000 -ac 1 -fflags nobuffer -avioflags direct -fflags discardcorrupt -strict experimental -framedrop -af "volume=0.05" -nodisp tcp://localhost:%SNDCPY_PORT%
+%FFPLAY% -f s16le -ar 48000 -ac 1 -fflags nobuffer -avioflags direct -fflags discardcorrupt -strict experimental -framedrop -af "volume=0.05" -nodisp tcp://localhost:%SNDCPY_PORT%
 goto :EOF
 
 :error
