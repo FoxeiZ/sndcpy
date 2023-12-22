@@ -3,4 +3,12 @@
     <string name="notification_waiting">Waiting for connection…</string>
     <string name="notification_forwarding">Audio forwarding enabled</string>
     <string name="action_stop">Stop</string>
+    <string name="use_adb_server">Use ADB server</string>
+    <string name="encode_to_mp3">Encode audio</string>
+    <string name="steaming_to_localhost">Streaming HTTP server</string>
+    <string name="start">Start</string>
+    <string name="hint_default">default</string>
+    <string name="address_title">Address</string>
+    <string name="bitrate_title">Bitrate</string>
+    <string name="channel_title">Channel</string>
 </resources>
