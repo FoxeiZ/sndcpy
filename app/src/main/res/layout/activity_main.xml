@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="#8C8C8C"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginTop="12dp"
+        android:orientation="vertical">
+
+        <CheckBox
+            android:id="@+id/use_adb"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:enabled="false"
+            android:text="@string/use_adb_server" />
+
+        <CheckBox
+            android:id="@+id/localhost_stream"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:checked="true"
+            android:text="@string/steaming_to_localhost" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/address_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/address_title" />
+
+            <EditText
+                android:id="@+id/address_port"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_default"
+                android:inputType="text"
+                android:minWidth="180dp"
+                android:text="0.0.0.0:4678" />
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/encode_mp3"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:text="@string/encode_to_mp3" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/bitrate_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/bitrate_title" />
+
+            <EditText
+                android:id="@+id/bitrate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:enabled="false"
+                android:hint="@string/hint_default"
+                android:inputType="text"
+                android:text="128" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/channel_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/channel_title" />
+
+            <EditText
+                android:id="@+id/channel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hint_default"
+                android:inputType="number"
+                android:text="2" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/startbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginBottom="12dp"
+        android:text="@string/start" />
+</LinearLayout>
